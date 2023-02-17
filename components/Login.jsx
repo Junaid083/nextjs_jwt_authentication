@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import jwt from "jsonwebtoken";
 
@@ -35,7 +35,7 @@ const Login = () => {
           json.admin ? "an admin ! " : "not an admin"
         }`
       );
-       
+
       const res = await fetch("/api/secret", {
         method: "POST",
         headers: {
@@ -44,14 +44,11 @@ const Login = () => {
         body: JSON.stringify(token),
       }).then((t) => t.json());
 
-
-      if(res.secretAdminCode){
-        setSecret( res.secretAdminCode)
+      if (res.secretAdminCode) {
+        setSecret(res.secretAdminCode);
+      } else {
+        setSecret("Welcome to user Dashboard");
       }
-      else{
-        setSecret( "")
-      }
-
     } else {
       setMessage("Something went wrong");
     }
@@ -85,7 +82,7 @@ const Login = () => {
         ></input>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
