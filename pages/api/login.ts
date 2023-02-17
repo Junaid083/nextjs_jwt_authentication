@@ -1,8 +1,9 @@
 import jwt from "jsonwebtoken";
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 const KEY = "junaidjunaid";
 
-export default function (req, res) {
+export default function (req : NextApiRequest , res: NextApiResponse) {
   if (!req.body) {
     res.statusCode = 404;
     res.end("Error");
