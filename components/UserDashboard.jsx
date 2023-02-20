@@ -14,8 +14,12 @@ const Dashboard = () => {
   };
   return (
     <>
+      <div class="col-sm-10 offset-sm-2">
       <h1>Welcome to User Dashboard</h1>
-      <button onClick={() => logOut()}>Logout</button>{" "}
+        <button type="submit" class="btn btn-primary" onClick={() => logOut()}>
+          Log Out
+        </button>
+      </div>
     </>
   );
 };
