@@ -8,13 +8,13 @@ const Dashboard = () => {
 
   const logOut = () => {
     console.log("Clicked");
-    Cookies.remove("Adminloggedin");
+    Cookies.remove("Userloggedin");
 
     router.push("http://localhost:3000/");
   };
   return (
     <>
-      <h1>Welcome to Admin Dashboard</h1>
+      <h1>Welcome to User Dashboard</h1>
       <button onClick={() => logOut()}>Logout</button>{" "}
     </>
   );

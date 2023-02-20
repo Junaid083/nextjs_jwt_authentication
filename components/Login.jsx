@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import jwt from "jsonwebtoken";
 import { useRouter } from 'next/router'
+import Cookies from 'js-cookie'
 
 const Login = () => {
   const defaultValue = {
@@ -48,9 +49,11 @@ const Login = () => {
 
       if (res.secretAdminCode) {
         setSecret(res.secretAdminCode);
+        Cookies.set("Adminloggedin", "true");
         router.push('/admin/dashboard')
       } else {
         setSecret("Welcome to user Dashboard");
+        Cookies.set("Userloggedin", "true");
         router.push('/user/dashboard')
       }
     } else {
@@ -63,6 +66,7 @@ const Login = () => {
     <>
       {/* <h1>{message}</h1> */}
       {/* <h1>{secret}</h1> */}
+      <div style={{ display: "flex", justifyContent: "center" }}>
       <form>
         <input
           name="username"
@@ -86,7 +90,7 @@ const Login = () => {
           }}
         ></input>
       </form>
-      
+      </div>
     </>
   );
 };
