@@ -10,7 +10,7 @@ const Dashboard = () => {
     console.log("Clicked");
     Cookies.remove("Userloggedin");
 
-    router.push("http://localhost:3000/");
+    router.push("/");
   };
   return (
     <>
