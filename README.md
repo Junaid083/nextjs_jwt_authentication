@@ -1,5 +1,5 @@
-This is a [Next.js JWT Authentication + Protecting Route] project using bootstrapped  
-## [`Live Demo`](https://nextjs-jwt-authentication-three.vercel.app/).
+This is a [`Next.js JWT Authentication + Protecting Route`]() project using bootstrap
+## [`Live Demo`](https://nextjs-jwt-authentication-three.vercel.app/)
 ## For Admin Login( admin@admin.com ,  admin)
 
 ## Getting Started
