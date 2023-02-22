@@ -7,7 +7,7 @@ export default function middleware(req) {
   let url = req.url;
 
   if (!adminverify && url.includes("/admin/dashboard")) {
-    return NextResponse.redirect("http://localhost:3000/");
+   return  NextResponse.rewrite(new URL('/', req.url))
   }
 
   if (adminverify && url === "http://localhost:3000/") {
@@ -15,7 +15,7 @@ export default function middleware(req) {
   }
 
   if (!userVerify && url.includes("/user/dashboard")) {
-    return NextResponse.redirect("http://localhost:3000/");
+    return  NextResponse.rewrite(new URL('/', req.url))
   }
 
   if (userVerify && url === "http://localhost:3000/") {
